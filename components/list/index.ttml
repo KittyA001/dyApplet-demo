@@ -1,0 +1,8 @@
+<scroll-view
+    scroll-y="{{scroll-y}}"
+    bindscroll="bindscroll"
+>
+    <view bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" class="c-mb30" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+        <prodCard itemInfo="{{item}}"></prodCard>
+    </view>
+</scroll-view>

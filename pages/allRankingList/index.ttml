@@ -1,0 +1,14 @@
+<view class="c-w100 c-hh450 c-bg-ranking c-pt390">
+    <view class="c-bg-white c-br30 c-ph24 c-pv10">
+        <view class="c-flex-row c-flex-center c-pv30" bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                <view class="c-pr20 c-flex-row c-justify-center c-fc-sblack">
+                    <view class="c-w100 c-h c-textAlign-c c-lh34 c-fs28 c-fw600 {{index===0?'c-fc-ff0d49':''}} {{index===1?'c-fc-f07026e7':''}} {{index===2?'c-fc-gray':''}}">{{index+1}}</view>
+                </view>
+                <view class="c-flex-1">
+                    <prodCard itemInfo="{{item}}"></prodCard>
+                </view>
+        </view>
+        <view tt:if="{{loading}}" class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">加载中...</view>
+        <view tt:if="{{finish}}" class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">已加载全部内容</view>
+    </view>
+</view>

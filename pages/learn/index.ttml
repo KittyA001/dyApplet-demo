@@ -1,0 +1,54 @@
+<view tt:if="{{token}}" class="c-h100vh c-bg-white c-flex-column c-flex-center">
+    <view class="c-flex-column c-flex-center">
+        <image class="c-ww320 c-hh252" src="/assets/img/icon-null.png"></image>
+        <view class="c-fc-sblack c-fs32">空空如也</view>
+        <view class="c-fc-gray c-fs24 c-mt30">每天都给自己一点惊喜吧</view>
+        <view class="c-mt60 c-ww400 c-hh80 c-lh80 c-textAlign-c c-br80 c-fc-2979FF c-bd1-2979ff">去逛逛</view>
+    </view>
+</view>
+<view tt:else>
+    <view class="c-bg-F6F7F8 c-h100vh">
+        <view class="c-hh500 c-bg-study">
+            <view class="c-pt200 c-ph30">
+                <view tt:for="{{learnInfo}}" tt:for-item="item" tt:for-index="index" class="c-mb20 c-pt20 c-bg-white c-ph24 c-br20">
+                    <view class="c-fc-xblack c-fw600">
+                        <text class="c-fs72">{{item.day}}</text>
+                        <text class="c-fs30">/{{item.month}}</text>
+                        <text class="c-fs30">/{{item.year}}</text>
+                    </view>
+                    <view class="c-pv24" tt:for="{{item.learnList}}" tt:for-item="itemList" tt:for-index="index">
+                        <card>
+                            <view slot="image" class="c-p c-ww240 c-hh160">
+                                <image class="c-w100 c-h c-br10" src="{{itemList.cover}}"></image>
+                                <view class="c-pt4 c-pb6 c-ph6 c-textAlign-c c-br6 c-pa c-fs18 c-fc-white c-p-r6 c-p-b6 c-translucent-balck50">{{prodType[itemList.prodType]}}</view>
+                            </view>
+                            <view class="{{itemList.isRecent? 'c-text-ellipsis1': 'c-text-ellipsis2'}} c-fs30" slot="content">{{itemList.name}}</view>
+                            <view tt:if="{{itemList.isRecent}}" class="c-ww100 c-hh36 c-lh36 c-textAlign-c c-fs20 c-fc-2979FF c-br6 c-translucent-blue c-bd1-2979ff" slot="label">最近学习</view>
+                            <view class="c-fc-gray c-fs24 c-flex-row c-aligni-center" slot="number">
+                                <view tt:if="{{itemList.progress === 100}}" class="c-ww110">已完成</view>
+                                <view tt:elif="{{itemList.progress === 0}}" class="c-ww110">未开始</view>
+                                <view tt:else class="c-ww110">已学{{itemList.progress}}%</view>
+                                <!-- <view class="c-ml20 c-br6 c-ww240 c-hh12 c-bg-xwhite">
+                                    <view class="c-br6 c-h c-bg-2979FF {{percentage}}"></view>
+                                </view> -->
+                                <view class="c-ww220">
+                                    <progressBar
+                                    percent="{{itemList.progress}}"
+                                    width="220"
+                                    height="18"
+                                    activeColor="#2979FF"
+                                    bgColor="#F2F2F2"
+                                    active="{{true}}"
+                                  ></progressBar>
+                                </view>
+    
+                            </view>
+                        </card>
+                    </view>
+                </view>
+                <view class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">已加载全部内容</view>
+            </view>
+        </view>
+    </view>
+
+</view>

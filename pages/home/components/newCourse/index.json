@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {
+    "cell": "/components/cell/index",
+    "card": "/components/card/index",
+    "portraitCard": "/components/portraitCard/index",
+    "prodCard": "/pages/home/components/prodCard/index"
+  }
+}

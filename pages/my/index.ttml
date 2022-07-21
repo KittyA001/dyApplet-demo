@@ -1,0 +1,66 @@
+<view class="c-bg-F6F7F8 c-h100vh">
+    <view class="c-pt200 c-hh500 c-w100 c-bg-nav">
+        <view class="c-ph30">
+            <view class="c-flex-row c-aligni-center">
+                <image class="c-ww128 c-hh128 c-mr30" src="/assets/img/defult_head.png"></image>
+                <view class="c-hh112 c-flex-column c-justify-sb">
+                    <view tt:if="{{token}}" class="c-fc-white c-fs36 c-fw400">{{info.name}}</view>
+                    <view tt:else class="c-fc-white c-fs36">暂未登录</view>
+                    <view tt:if="{{token}}" class="c-fs24 c-fc-white c-fw400">{{info.moble}}</view>
+                    <view tt:else class="c-fc-2979FF c-hh50 c-flex-row c-pv8 c-ph30 c-bg-white c-br50">
+                        <view class="iconfont c-mt4 c-fs24 icon-shouquan c-mr8"></view>
+                        <view class="c-fs24">点击授权手机号</view>
+                    </view>
+                </view>
+            </view>
+            <view class="c-bg-white c-pv30 c-ph30 c-br20 c-mt50">
+                <view class="c-pb24">
+                    <cell>
+                        <view class="c-fs24 c-fw400" slot="title">我的收入(元)</view>
+                        <view slot="right" class="c-flex-row c-flex-center c-fc-2979FF">
+                            <text class="c-fs24 c-mr6">查看详情</text>
+                            <text class="c-fs16 iconfont icon-gengduo"></text>
+                        </view>
+                    </cell>
+                </view>
+                <view class="c-fs60 c-fc-xblack">{{info.profit}}</view>
+                <view class="c-flex-row c-fs24 c-fc-xblack c-mt50">
+                    <view class="c-mr8">今日收入</view>
+                    <view class="c-mr20">{{info.todayIncome}}</view>
+                    <view class="c-mr8">可提现</view>
+                    <view>{{info.Withdrawable}}</view>
+                </view>
+            </view>
+            <view class="c-bg-white c-pv30 c-ph30 c-br20 c-mt50">
+                <view class="c-pb50">
+                    <cell>
+                        <view class="c-fs30 c-fc-xblack c-fw400" slot="title">我的订单</view>
+                        <view slot="right" class="c-flex-row c-flex-center c-fc-gray">
+                            <text class="c-fs16 iconfont icon-gengduo"></text>
+                        </view>
+                    </cell>
+                </view>
+                <view class="c-pb50">
+                    <cell>
+                        <view class="c-fs30 c-fc-xblack c-fw400" slot="title">我的积分</view>
+                        <view slot="right" class="c-flex-row c-flex-center c-fc-gray">
+                            <text class="c-fs16 iconfont icon-gengduo"></text>
+                        </view>
+                    </cell>
+                </view>
+                <view>
+                    <cell>
+                        <view class="c-fs30 c-fc-xblack c-fw400" slot="title">关于我们</view>
+                        <view slot="right" class="c-flex-row c-flex-center c-fc-gray">
+                            <view class="c-pv8 c-ph20 c-mr20 c-flex-row c-flex-center c-br48 c-fc-white c-fs24 c-linear-red">
+                                <image class="c-ww24 c-hh24 c-mr6 c-mb2" src="/assets/img/icon_hot.png"></image>
+                                <text>拍视频挂内容，让你极速变现</text>
+                            </view>
+                            <text class="c-fs16 iconfont icon-gengduo"></text>
+                        </view>
+                    </cell>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

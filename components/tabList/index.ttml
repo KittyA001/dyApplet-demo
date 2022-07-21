@@ -1,0 +1,8 @@
+<view class="c-fs24 c-fc-sblack c-flex-row c-aligni-center" style="{{layout}}">
+    <view tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index" style="{{layoutItem}}" class="c-pv20 c-p" bindtap="change" data-index="{{index}}">
+      <view class="{{tabType === index? fontStyle: 'c-fc-sxblack'}}">{{ item.name }}</view>
+      <view tt:if="{{isShowLine}}" class="c-pa c-p-lp50 c-p-b0 c-ww30 c-hh6 c-br2 c-translate-x-50">
+        <view style="background-color: {{linebg}};" class="c-w100 c-h c-br2 c-animation-display {{tabType === index? 'show':'hide'}}"></view>
+      </view>
+    </view>
+  </view>

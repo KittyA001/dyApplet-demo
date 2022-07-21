@@ -1,0 +1,14 @@
+<view class="c-h c-box-shadow11 c-pb12 {{bor}} {{width}} {{(index !== list.length-1) && isMargin?'c-mr30':''}}">
+    <view class="c-w100 {{height}}">
+      <slot name="image"></slot>
+    </view>
+    <view class="c-fs24 c-fc-xblack c-mt12 c-w100">
+      <slot name="content"></slot>
+    </view>
+    <view class="c-fs20 c-fc-sblack c-mt14">
+      <slot name="label"></slot>
+    </view>
+    <view class="c-fs22 c-mt14">
+      <slot name="price"></slot>
+    </view>
+  </view>

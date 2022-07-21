@@ -1,0 +1,16 @@
+{
+    "usingComponents": {
+        "cell": "/components/cell/index",
+        "card": "/components/card/index",
+        "portraitCard": "/components/portraitCard/index",
+        "rotationChart": "/pages/home/components/rotationChart/index",
+        "tabList": "/pages/home/components/tabList/index",
+        "discount": "/pages/home/components/discount/index",
+        "newCourse": "/pages/home/components/newCourse/index",
+        "talents": "/pages/home/components/talents/index",
+        "weekSelection": "/pages/home/components/weekSelection/index",
+        "hotCourse": "/pages/home/components/hotCourse/index",
+        "rankingList": "/pages/home/components/rankingList/index",
+        "search": "/components/search/index"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "discountProd": "/pages/discountDetails/components/discountProd/index"
+    },
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 0
+}

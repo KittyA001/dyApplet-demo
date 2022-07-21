@@ -1,0 +1,40 @@
+<view class="c-flex-column c-h100vh c-ph30 c-pt200 c-pb20">
+    <!-- 搜索 -->
+    <view class="c-p c-w100 c-mb20 c-pv16 c-bd-b1-e5">
+        <search value="{{search}}"></search>
+    </view>
+    <view tt:if="{{classifyList.length}}" class="c-flex-1 c-flex-row c-pb20 c-bg-ssgray c-contexty-scroll c-contexty-hidden">
+        <!-- 左 -->
+        <scroll-view scroll-y="{{true}}" class="c-w25 c-fc-xblack">
+            <view bindtap="changeActive" data-index="{{index}}" data-id="{{item.id}}" tt:for="{{classifyList}}" tt:for-item="item" tt:for-index="index" class="c-pv30  {{active === index?'c-fc-2979FF c-fw600 c-bg-white': ''}}"><view class="c-textAlign-c c-fs28  {{active === index?'c-bd-l2-2979FF': ''}}">{{item.name}}</view></view>
+        </scroll-view>
+        <!-- 右 -->
+        <view class="c-h c-flex-1 c-flex-column c-pl30 c-bg-white">
+            <view class="c-flex-row c-justify-sb c-fs28 c-pv30 c-bd-b1-e5">
+                <view class="c-fc-gray c-fs26">共{{total}}个内容</view>
+                <picker
+                    value="{{index}}"
+                    range="{{prodTypeList}}"
+                    bindchange="bindPickerChange"
+                    bindcancel="bindPickerCancel"
+                    >
+                    <view class="c-fc-sblack">全部分类 <text class="iconfont icon-xiala c-fs24"></text></view>
+                </picker>
+            </view>
+            <scroll-view scroll-y="{{true}}" bindscrolltolower="lower" class="c-h c-pt20">
+                <view class="c-pb30" bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{prodList}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                    <product itemInfo="{{item}}"></product>
+                </view>
+                <view class="c-pb120">
+                    <view tt:if="{{loading}}" class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">加载中...</view>
+                    <view tt:if="{{finish}}" class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">已经加载全部</view>
+                    <view tt:if="{{noCourse}}" class="c-h c-pt200 c-flex-column c-flex-center">
+                        <image class="c-ww220 c-hh200" src="/assets//img/icon-null.png"></image>
+                        <view class="c-fs28">暂无课程</view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+    <view tt:else class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">加载中...</view>
+</view>

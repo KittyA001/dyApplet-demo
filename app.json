@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/home/index",
+    "pages/learn/index",
+    "pages/my/index",
+    "pages/moreDetails/index",
+    "pages/allRankingList/index",
+    "pages/classification/index",
+    "pages/discountDetails/index",
+    "pages/home/details/index",
+    "pages/home/talentDetails/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "创课匠人",
+    "navigationBarTextStyle":"black",
+    "transparentTitle":"auto"
+  },
+  "disableScroll": true,
+  "tabBar": {
+    "selectedColor": "#5889f3",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "/assets/img/icon_index_d.png",
+        "selectedIconPath": "/assets/img/icon_index_p.png"
+      },
+      {
+        "pagePath": "pages/learn/index",
+        "text": "学习",
+        "iconPath": "/assets/img/icon_study_d.png",
+        "selectedIconPath": "/assets/img/icon_study_p.png"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "/assets/img/icon_member_d.png",
+        "selectedIconPath": "/assets/img/icon_member_p.png"
+      }
+    ]
+  }
+
+}

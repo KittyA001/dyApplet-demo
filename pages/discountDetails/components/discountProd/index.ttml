@@ -1,0 +1,44 @@
+<card fontSize="c-fs28">
+    <view slot="image" class="c-p">
+        <image class="c-ww250 c-hh160 c-br8" src="{{item.cover}}"></image>
+        <!-- <image tt:if="{{item.flashSalesForProd}}" class="c-pa c-p-t0 c-p-l0 c-ww134 c-hh40" src="/assets//img/discount-txt.png"></image> -->
+        <view class="c-pt4 c-pb6 c-ph6 c-textAlign-c c-br6 c-pa c-fs18 c-fc-white c-p-r6 c-p-b6 c-translucent-balck50">{{ prodType[item.prodType] }}</view>
+    </view>
+    <view slot="content">
+      <view class="c-fw600 c-text-ellipsis1 c-ww-bw">{{item.name}}</view>
+    </view>
+    <view slot="label">
+        <view tt:if="{{item.flashSalesForProd.lastCount===-1}}" class="c-fs24">
+            {{item.buyNum}}人已购
+        </view>
+        <progressBar tt:elif="{{item.salesPercent < 100}}" width="200" height="20" bgcolor="#fec0c1" activeColor="#ff4a35" active="{{true}}" percent="{{item.salesPercent}}" text="仅剩{{item.flashSalesForProd.lastCount}}份">
+            <view slot="icon" class="c-ww20 c-hh20">
+                <image class="c-w100 c-h" src="/assets//img/progress_circle.png"></image>
+            </view>
+        </progressBar>
+        <view tt:else class="c-ww200 c-linear-gray c-pl12 c-br20 c-fc-white c-fs18">
+            已抢光
+        </view>
+    </view>
+    <view slot="number" class="c-flex-row c-justify-sb">
+        <view class=" c-fs30 c-flex-row c-justify-sb" tt:if="{{item.payType === 1}}">
+            <view class="c-fc-FF4A35">免费</view>
+        </view>
+        <view tt:else class="c-flex-row c-justify-sb">
+            <view class="c-fc-FF4A35">
+              <!-- <text class="c-fw600" tt:if="{{item.flashSalesForProd}}">秒杀价</text> -->
+              <text class="c-fs24">￥</text>
+              <!-- <text tt:if="{{item.flashSalesForProd}}" class="c-fs24 c-fs30 c-fw600">{{item.flashSalesForProd.flashSalesPrice}}</text> -->
+              <text class="c-fs36">{{item.flashSalesForProd.flashSalesPrice}}</text>
+              <text class="c-fs24 c-fc-gray c-ml10 c-text-decoration-through">{{item.price}}</text>
+              <!-- <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text> -->
+              <!-- <text tt:if="{{item.couponProdListVo && item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">有券</text> -->
+            </view>
+            <!-- <view class="c-fs24">
+                {{item.buyNum}}人已购
+            </view> -->
+        </view>
+        <view class="c-fc-white c-fs24 c-ww134 c-hh50 c-br50 c-textAlign-c c-lh50 c-linear-red">抢购</view>
+
+    </view>
+</card>

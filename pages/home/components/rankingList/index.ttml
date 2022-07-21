@@ -1,0 +1,28 @@
+<view class="c-pt30 c-ph30">
+    <cell>
+        <view slot="title">{{rankingListInfo.sectionName}}</view>
+    </cell>
+    <view class="c-mt30 c-bd1-eee c-pb24 c-br10">
+        <view class="c-linear-pink c-br10 c-hh120 c-w100 c-flex-row c-justify-center c-aligni-center">
+            <text class="c-fw600 c-fs36 c-fc-pink">热门排行榜</text>
+        </view>
+        <view bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{rankingListInfo.dyProdListVoList}}" tt:for-item="item" tt:for-index="index" tt:key="index" class=" c-flex-row c-flex-center c-ph24 c-pb30">
+            <view class="c-pr20 c-flex-row c-justify-center">
+                <image class="c-ww34 c-hh34" tt:if="{{index===0}}" src="/assets/img/no_1.png"></image>
+                <image class="c-ww34 c-hh34" tt:elif="{{index===1}}" src="/assets/img/no_2.png"></image>
+                <image class="c-ww34 c-hh34" tt:elif="{{index===2}}" src="/assets/img/no_3.png"></image>
+                <view class="c-ww34 c-hh34 c-textAlign-c c-lh34 c-fs28 c-fc-gray c-fw600" tt:else>{{index+1}}</view>
+            </view>
+            <view tt:if="{{item.cover}}" class="c-ww200 c-br10 c-hh120 c-pr20">
+                <image class="c-w100 c-br10 c-h" src="{{item.cover}}"></image>
+            </view>
+            <view class="c-flex-1 {{item.cover? 'c-flex-column c-justify-sa' : 'c-flex-row c-justify-sb c-aligni-center'}}">
+                <view class="c-text-ellipsis1 c-fw600 c-fs28 c-pv4 c-pr20 c-ws-n">{{item.name}}</view>
+                <view class="c-fs20 c-fc-gray c-ws-n  {{item.cover?'c-mt14': ''}}">{{item.buyNum}}人已购</view>
+            </view>
+        </view>
+        <view class="c-ph24">
+            <view bindtap="goAll" data-id="{{rankingListInfo.sectionType}}" class="c-w100 c-fc-pink c-fs28 c-fw600 c-lh70 c-textAlign-c c-hh70 c-br64 c-translucent-pink">查看全部</view>
+        </view>
+    </view>
+</view>

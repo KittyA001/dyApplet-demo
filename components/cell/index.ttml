@@ -1,0 +1,18 @@
+<view class="c-flex-row c-justify-sb c-aligni-center {{bor}}">
+    <view class="c-flex-row c-aligni-center">
+      <view class="c-fs40 c-fc-xblack c-fw600">
+        <slot name="title"></slot>
+      </view>
+      <view class="c-fs20 c-fc-gray c-ml10">
+        <slot name="left"></slot>
+      </view>
+    </view>
+    <view class="c-fs20 c-fc-gray c-ml10 c-flex-row c-aligni-center">
+      <view>
+        <slot name="icon"></slot>
+      </view>
+      <view class="c-ml4">
+        <slot name="right"></slot>
+      </view>
+    </view>
+  </view>

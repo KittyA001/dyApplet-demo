@@ -1,0 +1,16 @@
+<view class="c-w100 c-flex-row {{height}}">
+    <view>
+      <slot name="image"></slot>
+    </view>
+    <view class="c-flex-1 c-ml20 c-flex-column c-justify-sb">
+      <view class="c-w100 c-fc-xblack {{fontSize}} c-text-ellipsis1">
+        <slot name="content"></slot>
+      </view>
+      <view class="c-w100 c-fs18 c-fc-gray">
+        <slot name="label"></slot>
+      </view>
+      <view class="c-w100 c-fs18 c-fc-gray">
+        <slot name="number"></slot>
+      </view>
+    </view>
+  </view>

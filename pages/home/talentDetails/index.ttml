@@ -1,0 +1,12 @@
+<view class="c-pt400 c-hh500 c-w100 c-bg-talent">
+    <view class="c-p c-bg-white c-ph30 c-hh500">
+        <view class="c-pa c-p-l30 c-p-t-75 c-brp50 c-ww150 c-hh150 c-bd1-fff6">
+            <image class="c-w100 c-h c-brp50" src="https://knowledge-payment.oss-cn-beijing.aliyuncs.com/13/resource/admin-fe_lj7l_GhtQk6nNkpwcGWSPHWEE.jpg"></image>
+        </view>
+        <view class="c-pv20 c-hh100 c-flex-row c-justify-end">
+            <view class="c-fs24">收藏&nbsp;<text class="c-fs28 iconfont icon-shoucang"></text></view>
+        </view>
+        <view class="c-fs32 c-fw600 c-fc-xblack">数据分析517-抖音</view>
+        <text class="c-bg-xorange c-fc-white c-fs24 c-pv6 c-ph20 c-br25">家庭教育，企业管理，国学文化</text>
+    </view>
+</view>

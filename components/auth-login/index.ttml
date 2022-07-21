@@ -1,0 +1,12 @@
+<view class="auth-mobile-box" tt:if="{{showDialog}}">
+  <view class="content-box" bindtap="tapCancel">
+    <text class="title">登录创客匠人</text>
+    <text class="iconfont icon-logo logo-img"></text>
+    <text class="get-title">小程序将获取以下授权</text>
+    <text class="get-info">·获得您的公开信息（昵称、头像）</text>
+    <view class="footer">
+      <view tt:if="{{isShowCancel}}" class="btn btn-cancel">暂不登录</view>
+      <view bindtap="tapLogin" class="btn btn-auth">立即登录</view>
+    </view>
+  </view>
+</view>

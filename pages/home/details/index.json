@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "card": "/components/card/index",
+        "progressBar": "/components/progressBar/index",
+        "cell": "/components/cell/index",
+        "prodCard": "/pages/home/details/components/prodCard/index",
+        "tabList": "/components/tabList/index",
+        "toast": "/components/toast/index"
+    }
+}

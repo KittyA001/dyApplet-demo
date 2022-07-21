@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "card": "/components/card/index",
+        "progressBar": "/components/progressBar/index"
+    },
+    "navigationBarTitleText": "学习"
+}

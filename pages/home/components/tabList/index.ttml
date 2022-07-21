@@ -1,0 +1,26 @@
+<view class="c-w100 c-hh160 c-pt30 c-p">
+    <swiper
+    class="c-hh150"
+    autoplay="{{false}}"
+    indicator-color="#999999"
+    indicator-active-color="#000000"
+    interval="2000"
+    previous-margin="0"
+    bindchange="change"
+    bindanimationfinish="animationFinish"
+  >
+  <view class="c-w100" tt:for="{{list}}"  tt:for-index="index" tt:key="index" tt:for-item="itemList">
+    <swiper-item class="c-hh150 c-w100 c-flex-row">
+        <view class="c-w20 c-h" tt:for="{{itemList}}" tt:for-item="item" tt:for-index="index" tt:key="{{index}}" bindtap="goDetails" data-id="{{item.id}}" data-name="{{item.name}}">
+            <view class="c-h c-flex-column c-aligni-center">
+                <image class="c-ww50 c-hh50 c-mb10 c-fc-xsblue" src="{{item.image}}"></image>
+                <view class="c-fs20 c-fc-sblack c-text-ellipsis1">{{ item.name }}</view>
+            </view>
+        </view>
+    </swiper-item>
+  </view>
+    </swiper>
+    <view class="c-flex-row c-pa c-p-b0 c-p-lp50 c-translate-x-50">
+        <view tt:for="{{list}}" tt:for-index="index" class="c-ww44 c-hh8 {{acvtive === index? 'c-bg-2979FF': 'c-bg-xwhite'}}"></view>
+      </view>
+  </view>

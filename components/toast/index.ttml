@@ -1,0 +1,5 @@
+<view tt:if="{{isShow}}" class="c-w100 c-h100vh c-pa c-p-t0 c-pz100">
+    <view class="c-fc-white c-fs24 c-translucent-balck80 c-pa c-p-tp50 c-p-lp50 c-translate-xy-50 c-br20 c-flex-column c-justify-sb c-aligni-center c-pv40 c-ph40">
+      <slot>{{content}}</slot>
+    </view>
+  </view>

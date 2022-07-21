@@ -1,0 +1,10 @@
+<view style="width:{{width}}rpx;height:{{height}}rpx;background-color:{{bgcolor}};" class="c-p c-br20">
+    <view style="{{style}}" class="c-pa c-p-tp50 c-translate-y-50 c-p-l10 c-fc-white c-fs18 c-h c-lh c-zindex10">{{text}}</view>
+    <view class="c-h" style="width: {{percent}}%;" tt:if="{{percent}}">
+        <view style="background-color:{{activeColor}};" class="c-p {{active?'c-animation-width': ''}} c-fc-white c-fs18 c-w100 c-h c-pl12 c-br18 c-flex-row c-justify-end c-aligni-center">
+            <view>
+                <slot name="icon"></slot>
+            </view>
+        </view>
+    </view>
+</view>

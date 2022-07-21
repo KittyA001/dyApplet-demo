@@ -1,0 +1,46 @@
+<view class="c-p c-linear-sblue c-w100">
+    <!-- <view class="c-bg-falsh c-w100 c-hh500">
+        <view class="c-flex-column c-h100vh">
+            <view class="c-hh340"></view>
+            <view class="c-flex-1 c-w100 c-contexty-scroll c-contexty-hidden c-ph30">
+                <scroll-view scroll-y="{{true}}" class="c-h c-w100 c-bg-white c-br20 c-pv10">
+                    <view class="c-pv30 c-w100 c-ph24" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                        <discountProd itemInfo="{{item}}"></discountProd>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="c-mt30 c-mb40 c-flex-row c-flex-center">
+                <view class="c-hh1 c-ww200 c-bg-sgray"></view>
+                <view class="c-fs20 c-fc-xsblack c-ph20 c-flex-row c-flex-center"><text class="iconfont icon-logo c-mr10"></text><text>创客匠人提供技术支持</text></view>
+                <view class="c-hh1 c-ww200 c-bg-sgray"></view>
+            </view>
+        </view>
+    </view> -->
+    <view class="c-bg-falsh c-w100 c-hh500 c-pt340 c-ph30">
+        <!-- <view class="c-flex-column c-h100vh"> -->
+            <!-- <view class="c-hh340"></view> -->
+
+        <!-- </view> -->
+    </view>
+    <view class="c-linear-sblue">
+        <view class="c-pv30 c-w100 c-ph24" tt:for="{{list.length}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+            <view class="c-hh160"></view>
+        </view>
+    </view>
+    <view class="c-pa c-p-t340 c-p-l0 c-ph30">
+        <!-- <scroll-view scroll-y="{{true}}"> -->
+            <view class="c-w100 c-br20 c-bg-white">
+                <view class="c-pv30 c-w100 c-ph24" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                    <discountProd itemInfo="{{item}}"></discountProd>
+                </view>
+            </view>
+            <view class="c-mt30 c-flex-row c-flex-center">
+                <view class="c-hh1 c-ww200 c-bg-white"></view>
+                <view class="c-fs20 c-fc-white c-ph20 c-flex-row c-flex-center"><text class="iconfont icon-logo c-mr10"></text><text>创客匠人提供技术支持</text></view>
+                <view class="c-hh1 c-ww200 c-bg-white"></view>
+            </view>
+        <!-- </scroll-view> -->
+    </view>
+
+
+</view>

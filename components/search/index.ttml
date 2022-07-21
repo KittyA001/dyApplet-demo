@@ -1,0 +1,8 @@
+<!-- 搜索 -->
+<view class="c-bg-white c-w100">
+  <input value="{{search}}" data-modal='search' bindinput='handleInputChange' class="c-br64 c-bg-F6F7F8 c-w100 c-bd0 c-hh64 c-textAlign-c c-fs28 c-p" type="text" />
+  <view id="search" tt:if="{{!search}}" class="c-flex-row c-fc-gray c-fs28 c-pa c-p-tp50 c-p-tl50 c-translate-xy-50">
+      <image class="c-mt8 c-mr20 c-ww28 c-hh28" src="../../assets/img/icon_search.png"/>
+      <view class="c-fc-xsblack c-fs28">请输入搜索内容</view>
+  </view>
+</view>

@@ -1,0 +1,65 @@
+<view class="c-pt30" tt:if="{{hotCourseList.sectionName}}">
+    <view class=" c-ph30">
+        <cell>
+            <view slot="title">{{hotCourseList.sectionName}}</view>
+        </cell>
+    </view>
+    <view class="c-flex-row c-pl30">
+        <view class="c-pt30 c-pr30 c-w50">
+            <view class="c-mb30 c-w100" bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{hotCourseLeft}}" tt:for-item="item" tt:for-index="index">
+                <portraitCard width="c-w100" height="c-hh240" bor="c-br20">
+                    <view slot="image" class="c-w100 c-h c-p">
+                        <image class="c-w100 c-h c-brtr10 c-brtl10" src="{{item.cover}}"></image>
+                        <image tt:if="{{item.flashSalesForProd}}" class="c-pa c-p-t0 c-p-l0 c-ww134 c-hh40" src="../../assets//img/discount-txt.png"></image>
+                    </view>
+                    <view class="c-pl16 c-text-ellipsis2 c-fs28" slot="content">
+                        <view class="c-fw600">{{item.name}}</view>
+                    </view>
+                    <view class="c-pl16 c-flex-row" slot="label">
+                        <image class="c-ww30 c-hh30 c-brp50 c-mr10" src="{{item.headimgurl}}"></image>
+                        <text>{{item.talentName}}</text>
+                    </view>
+                    <view class="c-ph16 c-fc-FF4A35" slot="price">
+                        <text class="c-fw600 c-fs18" tt:if="{{item.flashSalesForProd}}">秒杀价</text>
+                        <text class="c-fs24 c-fw600">￥</text>
+                        <text tt:if="{{item.flashSalesForProd}}" class="c-fs24 c-fw600 c-fs30">{{item.flashSalesForProd.flashSalesPrice}}</text>
+                        <text tt:else class="c-fs24 c-fw600">{{item.price}}</text>
+                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text>
+                        <text tt:if="{{item.couponProdListVo && item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">有券</text>
+                    </view>
+                </portraitCard>
+            </view>
+        </view>
+        <view class="c-pt30 c-pr30 c-w50">
+            <view class="c-mb30 c-w100" bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{hotCourseRight}}" tt:for-item="item" tt:for-index="index">
+                <portraitCard width="c-w100" height="c-hh240" bor="c-br20">
+                    <view slot="image" class="c-w100 c-h c-p">
+                        <image class="c-w100 c-h c-brtr10 c-brtl10" src="{{item.cover}}"></image>
+                        <image tt:if="{{item.flashSalesForProd}}" class="c-pa c-p-t0 c-p-l0 c-ww134 c-hh40" src="../../assets//img/discount-txt.png"></image>
+                    </view>
+                    <view class="c-ph16 c-text-ellipsis2 c-fs28" slot="content">
+                        <view class="c-fw600">{{item.name}}</view>
+                    </view>
+                    <view class="c-ph16 c-flex-row" slot="label">
+                        <image class="c-ww30 c-hh30 c-brp50 c-mr10" src="{{item.headimgurl}}"></image>
+                        <text>{{item.talentName}}</text>
+                    </view>
+                    <view class="c-ph16 c-fc-FF4A35" slot="price">
+                        <text class="c-fw600 c-fs18" tt:if="{{item.isSeckill}}">秒杀价</text>
+                        <text class="c-fs24 c-fw600">￥</text>
+                        <text tt:if="{{item.flashSalesForProd}}" class="c-fs24 c-fw600 c-fs30">{{item.flashSalesForProd.flashSalesPrice}}</text>
+                        <text tt:else class="c-fs24 c-fw600">{{item.price}}</text>
+                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text>
+                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">有券</text>
+                    </view>
+                </portraitCard>
+          </view>
+        </view>
+    </view>
+    <view class="c-flex-row c-flex-center c-pt30">
+        <view bindtap="goAll" data-id="{{hotCourseList.sectionType}}" class="c-ww250 c-fc-2979FF c-fs24 c-br70 c-hh70 c-lh70 c-textAlign-c c-translucent-blue">
+            查看全部
+            <text class="c-fs22 iconfont icon-kaishi"></text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "prodCard": "/pages/home/components/prodCard/index"
+    },
+    "navigationBarTitleText": "",
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 0
+}

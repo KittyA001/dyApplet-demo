@@ -1,0 +1,26 @@
+<view class="c-pt30">
+    <cell>
+        <view slot="title">{{talentsInfo.sectionName}}</view>
+    </cell>
+    <view class="c-pt20">
+        <scroll-view class="c-ws-n" scroll-x="{{true}}">
+            <view class="c-flex-row c-justify-sb c-pb40">
+                <view bindtap="goDetails" data-id="{{item.id}}" class="c-textAlign-c c-inlineblock" tt:for="{{talentsInfo.dyProdListVoList}}" tt:for-item="item" tt:for-index="index" tt:key="{{index}}">
+                    <portraitCard bor="c-br10" width="c-ww270" height="c-hh270" isMargin="{{true}}" index="{{index}}" list="{{talentsInfo.dyProdListVoList}}">
+                        <view slot="image" class="c-w100 c-h c-p">
+                            <image class="c-w100 c-h c-br10 c-brtr10 c-brtl10" src="{{item.headimgurl}}"></image>
+                            <image tt:if="{{index+1 === 1}}" class="c-ww50 c-hh34 c-pa c-p-t0 c-p-l0" src="/assets/img/rank1.png"></image>
+                            <image tt:elif="{{index+1 === 2}}" class="c-ww50 c-hh34 c-pa c-p-t0 c-p-l0" src="/assets/img/rank2.png"></image>
+                            <image tt:elif="{{index+1 === 3}}" class="c-ww50 c-hh34 c-pa c-p-t0 c-p-l0" src="/assets/img/rank3.png"></image>
+                            <view tt:else class="c-ww50 c-hh34 c-lh34 c-pa c-p-t0 c-p-l0 c-bg-img c-fc-white c-fs24 c-fw600"><text class="c-mr10">{{index+1}}</text></view>
+                            <view class="c-pv16 c-w100 c-ph10 c-pa c-p-b0 c-fc-white c-fs22 c-linear-black c-flex-row c-justify-satrt">
+                                <text>{{item.talentTypeName}}</text>
+                            </view>
+                        </view>
+                        <view class="c-text-ellipsis1 c-ph10 c-fs28" slot="content">{{item.talentName}}</view>
+                    </portraitCard>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+  </view>

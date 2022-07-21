@@ -1,0 +1,45 @@
+<view class="c-pt30">
+    <cell>
+        <view slot="title">{{selectedInfo.sectionName}}</view>
+    </cell>
+    <view class=" c-p">
+        <view class="c-hh410 c-pt30">
+            <swiper
+            class="c-hh410"
+            autoplay="{{false}}"
+            indicator-color="#999999"
+            indicator-active-color="#000000"
+            interval="2000"
+            previous-margin="0"
+            bindchange="change"
+            circular="{{true}}"
+            bindanimationfinish="animationFinish"
+            next-margin="93rpx"
+            previous-margin="300rpx"
+          >
+              <view class="c-ww270" bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{selectedInfo.dyProdListVoList}}"  tt:for-index="index" tt:key="index" tt:for-item="item">
+                <swiper-item class="c-hh410 c-ww300">
+                  <view class="c-hh340">
+                    <view class="c-h c-br10 c-pb20 c-ww270 c-box-shadow11 c-flex-column c-justify-sb {{index !== selected.dyProdListVoList.length-1?'c-mr30':''}}">
+                        <view class="c-w100 c-hh180 c-h c-p">
+                            <image class="c-w100 c-h c-brtr10 c-brtl10" src="{{item.cover}}"></image>
+                            <image tt:if="{{item.flashSalesForProd}}" class="c-pa c-p-t0 c-p-l0 c-ww134 c-hh40" src="/assets/img/discount-txt.png"></image>
+                        </view>
+                        <view class="c-flex-1 c-flex-column c-justify-sb">
+                            <view class="c-ph16 c-mt12 c-w100 c-fc-xblack c-text-ellipsis2 c-fs28 c-fw600" slot="content">{{item.name}}</view>
+                            <view class="c-ph16 c-flex-row c-fs20 c-fc-sblack c-mt14" >
+                                <image class="c-ww30 c-hh30 c-brp50 c-mr10" src="{{item.headimgurl}}"></image>
+                                <text class="c-text-ellipsis1 c-lh30">{{item.talentName}}</text>
+                            </view>
+                        </view>
+                    </view>
+                  </view>
+                </swiper-item>
+              </view>
+            </swiper>
+        </view>
+        <view class="c-flex-row c-pa c-p-b0 c-p-lp50 c-translate-x-50">
+          <view tt:for="{{selected.dyProdListVoList}}" tt:for-index="index" class="c-ww10 c-mr4 c-br4 c-hh8 {{selectedAcvtive === index? 'c-bg-2979FF c-ww20': 'c-bg-xwhite'}}"></view>
+        </view>
+    </view>
+</view>

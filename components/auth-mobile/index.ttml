@@ -1,0 +1,8 @@
+<view class="auth-mobile-box" tt:if="{{showDialog}}">
+  <view class="content-box" bindtap="tapCancel">
+    <text class="iconfont icon-shanchuxian close-icon"></text>
+    <text class="title">登录创客匠人</text>
+    <text class="iconfont icon-logo logo-img"></text>
+    <button class="btn-auth" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumberHandler">授权手机号快捷登录</button>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<!-- 新课上线 newCourse-->
+<view class="c-pt40">
+    <cell>
+        <view slot="title">{{newCourseInfo.sectionName}}</view>
+        <view bindtap="goMore" data-id="{{newCourseInfo.sectionType}}" slot="right" class="c-fs24">查看更多<text class="iconfont icon-gengduo c-fs24"></text></view>
+    </cell>
+    <view class="c-pt20">
+      <view class="c-mb30" bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+          <prodCard itemInfo="{{item}}"></prodCard>
+        </view>
+    </view>
+  </view>

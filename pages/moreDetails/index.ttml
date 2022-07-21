@@ -1,0 +1,21 @@
+<view class="c-pt200">
+    <view class='c-pf c-p-t0 c-w100 c-bg-white c-hh200 c-zindex20'></view>
+    </view>
+    <view class="c-ph30">
+                <!-- 搜索 -->
+        <view class="c-p c-mb20 c-pv16 ">
+            <search value="{{search}}"></search>
+        </view>
+        <cell>
+            <view class="c-fc-gray c-fs28 c-fw400" slot="title">共{{total}}个内容</view>
+            <view bindtap="goAll" data-id="1" slot="right" class="c-fs28">全部类型 <text class="iconfont icon-gengduo c-fs24"></text></view>
+        </cell>
+        <view class="c-pv40">
+            <view bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" class="c-mb30" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                <prodCard itemInfo="{{item}}"></prodCard>
+            </view>
+            <view tt:if="{{loading}}" class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">加载中...</view>
+            <view tt:if="{{finish}}" class="c-w100 c-fs28 c-textAlign-c c-pv30 c-fc-xsblack">已加载全部内容</view>
+        </view>
+    </view>
+</view>

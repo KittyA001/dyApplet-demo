@@ -1,0 +1,10 @@
+{
+    "usingComponents": {
+        "search": "/components/search/index",
+        "cell": "/components/cell/index",
+        "prodCard": "/pages/home/components/prodCard/index"
+    },
+    "enablePullDownRefresh": true,
+    "onReachBottomDistance": 0
+
+}

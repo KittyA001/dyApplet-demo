@@ -1,0 +1,21 @@
+      <!-- 轮播图 -->
+      <view class="c-w100 c-hh346">
+        <swiper
+        indicator-dots="{{true}}"
+        autoplay="{{false}}"
+        indicator-color="#999999"
+        indicator-active-color="#ffffff"
+        interval="2000"
+        previous-margin="0"
+        bindchange="change"
+        bindtransition="transition"
+        style="height: 346rpx"
+      >
+        <view class="c-hh346" tt:for="{{imagesList}}"  tt:for-index="index" tt:key="index" tt:for-item="item">
+          <swiper-item>
+              <image class="c-w100 c-hh346 c-br30" src="{{item.imgPath}}" alt="" />
+              <view>{{1}}</view>
+          </swiper-item>
+        </view>
+      </swiper>
+      </view>

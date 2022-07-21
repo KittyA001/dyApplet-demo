@@ -1,0 +1,14 @@
+<!-- 折扣 discount-->
+<view class="c-mt30 c-w100 c-flex-row c-justify-sb">
+  <view bindtap="goCourse" class="c-ww456 c-hh304">
+      <image class="c-w100 c-h c-br10" src="/assets/img/purchased-courses.png"></image>
+  </view>
+  <view class="c-flex-1 c-pl20 c-flex-column c-justify-sb">
+      <view class="c-br10">
+      <image bindtap="goDiscount" class="c-w100 c-hh142" src="/assets//img/discount.png"></image>
+      </view>
+      <view class="c-w100 c-br10">
+      <image class="c-w100 c-hh142" src="/assets/img/coupons.png"></image>
+      </view>
+  </view>
+</view>

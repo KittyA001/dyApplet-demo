@@ -1,0 +1,100 @@
+{
+  "setting": {
+    "urlCheck": true,
+    "es6": true,
+    "postcss": true,
+    "minified": true,
+    "newFeature": true,
+    "autoCompile": true
+  },
+  "appid": "tte8bd9e0077971162",
+  "projectname": "抖音测试",
+  "condition": {
+    "miniprogram": {
+      "current": 1656987621339,
+      "list": [
+        {
+          "id": 1656923834964,
+          "name": "my",
+          "pathName": "pages/my/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1656985912005,
+          "name": "learn",
+          "pathName": "pages/learn/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1656987621339,
+          "name": "home",
+          "pathName": "pages/home/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1657095512718,
+          "name": "details",
+          "pathName": "pages/moreDetails/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1657165064311,
+          "name": "all",
+          "pathName": "pages/allRankingList/index",
+          "query": "sectionType=4",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1657182034126,
+          "name": "classify",
+          "pathName": "pages/classification/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1657263198950,
+          "name": "discount",
+          "pathName": "pages/discountDetails/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1657525492451,
+          "name": "prodDetails",
+          "pathName": "pages/home/details/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1658289484272,
+          "name": "talentDetails",
+          "pathName": "pages/home/talentDetails/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        }
+      ]
+    }
+  }
+}

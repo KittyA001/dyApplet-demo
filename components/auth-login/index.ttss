@@ -1,0 +1,72 @@
+.auth-mobile-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.content-box {
+    width: 620rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: 70rpx;
+    width: 100%;
+    font-size: 32rpx;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+}
+
+.logo-img {
+    font-size: 128rpx;
+    color: #FF6022;
+    margin: 36rpx auto 0;
+}
+
+.get-title {
+    margin-top: 60rpx;
+    padding-left: 40rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.get-info {
+    margin-top: 20rpx;
+    padding-left: 40rpx;
+    padding-bottom: 50rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+.footer{
+    display: flex;
+    height: 100rpx;
+    width: 100%;
+    border-top: 1rpx solid #F5F5F5;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 0;
+    font-size: 32rpx;
+}
+.btn-cancel{
+    color: #666;
+    border-right: 1rpx solid #F5F5F5;
+}
+.btn-auth {
+    color: #2979FF;
+}
