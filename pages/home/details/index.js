@@ -66,7 +66,7 @@ Page({
           "currentTimeNum": 0
         })
         this.playOff()
-        this.playOn(true)
+        this.playOn()
       }
       tt.pageScrollTo({
         scrollTop: 0,

@@ -32,7 +32,7 @@
                     </view>
                 </view>
             </view>
-            <!-- 进度条 -->
+            
             <view class="c-ph30 c-pt50 c-pb30">
                 <view id="progress" class="c-w100 c-hh6 c-bg-ssgray c-flex-row c-aligni-center">
                     <view class="c-h c-flex-1">
@@ -43,7 +43,7 @@
                     <view class="c-pv10 c-ph30 c-fc-white c-text-hidden c-br25 c-fs20">{{currentPlayTime}}/{{duration}}</view>
                 </view>
             </view>
-            <!-- 暂停切换 -->
+            
             <view class="c-pv30 c-flex-row c-justify-sb c-aligni-center">
                 <view tt:if="{{catalogueList[playIndex].isFreeView}}" bindtap="backward" class="iconfont icon-kuaitui15 c-fs40 c-fc-deep-bule"></view>
                 <view tt:else class="iconfont icon-kuaitui15 c-fs40 c-fc-deep-bule"></view>
@@ -61,6 +61,7 @@
                 <view tt:else class="iconfont icon-kuaijin15 c-fs40 c-fc-deep-bule"></view>
             </view>
         </view>
+        <!-- <audio info="{{catalogueList[playIndex]}}" cover="{{info.cover}}" progress="{{progress}}" autoplay="{{true}}"></audio> -->
     </view>
     <image tt:else class="c-w100 c-hh500" src="{{info.cover}}"></image>
 

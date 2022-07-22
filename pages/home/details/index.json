@@ -5,6 +5,7 @@
         "cell": "/components/cell/index",
         "prodCard": "/pages/home/details/components/prodCard/index",
         "tabList": "/components/tabList/index",
-        "toast": "/components/toast/index"
+        "toast": "/components/toast/index",
+        "audio": "/pages/home/details/components/audio/index"
     }
 }

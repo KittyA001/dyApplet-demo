@@ -1,0 +1,5 @@
+<view class="c-mt60 c-flex-row c-flex-center">
+    <view class="c-hh1 c-ww200 c-bg-sgray"></view>
+    <view class="c-fs20 c-fc-xsblack c-ph20 c-flex-row c-flex-center"><text class="iconfont icon-logo c-mr10"></text><text>创客匠人提供技术支持</text></view>
+    <view class="c-hh1 c-ww200 c-bg-sgray"></view>
+</view>

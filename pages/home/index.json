@@ -11,6 +11,7 @@
         "weekSelection": "/pages/home/components/weekSelection/index",
         "hotCourse": "/pages/home/components/hotCourse/index",
         "rankingList": "/pages/home/components/rankingList/index",
-        "search": "/components/search/index"
+        "search": "/components/search/index",
+        "technical-support": "/components/technicalSupport/index"
     }
 }

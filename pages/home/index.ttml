@@ -22,10 +22,7 @@
     <hotCourse tt:if="{{hotCourse.sectionName}}" hotCourse="{{hotCourse}}"></hotCourse>
     <!-- 排行榜 -->
     <rankingList tt:if="{{rankingList.sectionName}}" rankingList="{{rankingList}}"></rankingList>
-    <view class="c-mt60 c-flex-row c-flex-center">
-        <view class="c-hh1 c-ww200 c-bg-sgray"></view>
-        <view class="c-fs20 c-fc-xsblack c-ph20 c-flex-row c-flex-center"><text class="iconfont icon-logo c-mr10"></text><text>创客匠人提供技术支持</text></view>
-        <view class="c-hh1 c-ww200 c-bg-sgray"></view>
-    </view>
+    <!-- 技术提供 -->
+    <technical-support></technical-support>
     <image class="c-ww90 c-hh90 c-pf c-p-b24 c-p-r24" src="../../assets/img/open_video.png"></image>
   </view>

@@ -1,0 +1,47 @@
+<view class="c-ph40">
+    <view class="c-100 c-hh240 c-flex-row c-justify-center">
+        <view class="c-flex-row c-flex-1">
+            <view tt:for="{{5}}" tt:for-item="item" tt:key="item" class="c-h c-flex-row c-justify-center c-aligni-end">
+                <view class="c-ww8 c-h50 c-bg-ssgray c-mr8"></view>
+                <view class="c-ww8 c-h30 c-bg-ssgray c-mr8"></view>
+            </view>
+        </view>
+        <view class="c-ww350">
+            <image class="c-w100 c-h c-br20" src="{{cover}}"></image>
+        </view>
+        <view class="c-flex-row c-flex-1">
+            <view tt:for="{{5}}" tt:for-item="item" tt:key="item" class="c-h c-flex-row c-justify-center c-aligni-end">
+                <view class="c-ww8 c-h30 c-bg-ssgray c-mr8"></view>
+                <view class="c-ww8 c-h50 c-bg-ssgray c-mr8"></view>
+            </view>
+        </view>
+    </view>
+    <!-- 进度条 -->
+    <view class="c-ph30 c-pt50 c-pb30">
+        <view id="progress" class="c-w100 c-hh6 c-bg-ssgray c-flex-row c-aligni-center">
+            <view class="c-h c-flex-1">
+                <view class="c-p c-h c-bg-41526f" style="width:{{progress}}%">
+                    <view id="time" bindtouchstart="touchstart" bindtouchmove="touchmove" bindtouchend="touchend" style="right: -{{timeWidth}}px;" class="c-pa c-translate-y-50 c-pv10 c-ph30 c-bg-41526f c-fc-white c-br25 c-fs20">{{currentPlayTime}}/{{duration}}</view>
+                </view>
+            </view>
+            <view class="c-pv10 c-ph30 c-fc-white c-text-hidden c-br25 c-fs20">{{currentPlayTime}}/{{duration}}</view>
+        </view>
+    </view>
+    <!-- 暂停切换 -->
+    <view class="c-pv30 c-flex-row c-justify-sb c-aligni-center">
+        <view tt:if="{{info.isFreeView}}" bindtap="backward" class="iconfont icon-kuaitui15 c-fs40 c-fc-deep-bule"></view>
+        <view tt:else class="iconfont icon-kuaitui15 c-fs40 c-fc-deep-bule"></view>
+        <view class="c-ww300 c-flex-row c-justify-sb c-aligni-center">
+            <view bindtap="getPrevious" class="c-fs40 iconfont icon-shangyishou c-fc-ccc"></view>
+            <view tt:if="{{!play}}" class="c-ww104 c-hh104 c-bg-41526f c-flex-row c-flex-center c-br50">
+                <view bindtap="playOn" class="iconfont icon-kaishi c-fc-white"></view>
+            </view>
+            <view tt:if="{{play}}" class="c-ww104 c-hh104 c-bg-41526f c-flex-row c-flex-center c-br50">
+                <view bindtap="playOff" class="iconfont icon-zanting c-fc-white"></view>
+            </view>
+            <view bindtap="getNext" class="c-fs40 iconfont icon-xiayishou c-fc-deep-bule"></view>
+        </view>
+        <view tt:if="{{info.isFreeView}}" bindtap="forward" class="iconfont icon-kuaijin15 c-fs40 c-fc-deep-bule"></view>
+        <view tt:else class="iconfont icon-kuaijin15 c-fs40 c-fc-deep-bule"></view>
+    </view>
+</view>
