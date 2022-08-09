@@ -322,6 +322,7 @@ let infoData = {
   ]
 }
 let { ttRequestPost } = require("../../utils/util")
+let utils = require("../../utils/util")
 const { PROD_TYPE } = require('../../utils/constData')
 
 Page({
@@ -332,7 +333,10 @@ Page({
     size: 10,
     total: '',
     loading: false,
-    finish: false
+    finish: false,
+    prodTypeList: [],
+    prodType: '',
+    type: ''
   },
   async getList() {
     this.setData({
@@ -346,7 +350,7 @@ Page({
         level: "1",
         pageNo: this.data.pageNo,
         pageSize: this.data.size,
-        prodType: "",
+        prodType: this.data.prodType,
         sectionType: this.data.sectionType
       })
       let arr = this.data.list
@@ -373,7 +377,36 @@ Page({
     let type = PROD_TYPE[e.currentTarget.dataset.type]
     tt.navigateTo({url: `/pages/home/details/index?id=${id}&type=${type}`})
   },
-  
+  bindPickerChange(e){
+    console.log(e.detail)
+    let index = Number(e.detail.value)
+    console.log(this.data.prodTypeList[index])
+    this.setData({
+      "type": this.data.prodTypeList[index]
+    })
+    if (this.data.prodTypeList[index] === '全部类型') {
+      this.setData({
+        "list": [],
+        "prodType": '',
+        // "sectionType": '1'
+      },()=>{
+        this.getList()
+      })
+    } else {
+      for (let i in PROD_TYPE) {
+        if (this.data.prodTypeList[index] == PROD_TYPE[i]) {
+          this.setData({
+            "prodType": i
+          })
+        }
+      }
+      this.setData({
+        "list": [],
+        // "sectionType": 2
+      })
+      this.getList()
+    }
+  },
 onReachBottom() {
   this.setData({
     "loading": true
@@ -413,6 +446,14 @@ onReachBottom() {
       title: type[options.id]
     })
     this.getList()
-    
+    let arr = ['全部类型']
+    for (let i in PROD_TYPE) {
+      arr.push(PROD_TYPE[i])
+    }
+    console.log('arr',arr)
+    this.setData({
+      "prodTypeList": arr,
+      "type": arr[0]
+    })
   }
 })

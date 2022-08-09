@@ -9,11 +9,11 @@ App({
     if (refereeId) {
       this.globalData.refereeId = refereeId
     }
-    tt.setStorageSync('dyUserId', '1485787894313406465');
-    tt.setStorageSync('userMobile', '15205921176');
-    tt.setStorageSync('dyToken', 'eyJjcmVhdG9yIjoiVElLVE9LLVNIT1AiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aWt0b2stc2hvcCIsInJmdCI6MTY1ODk5NTk3OSwidWlkIjoiMTQ4NTc4Nzg5NDMxMzQwNjQ2NSIsIm5iZiI6MTY1NjQ5MDM3OSwiY3YiOjEwMCwiaXNzIjoiY2tqciIsInV0eSI6MSwiZXhwIjoxNjU5MDgyMzc5LCJpYXQiOjE2NTY0OTAzNzksImFpZCI6IjE0ODU3ODc4OTQzMTM0MDY0NjUiLCJjaWQiOiIxMTczOTQ1MDc3MDg4ODg4ODg4In0.NQSlNBr-sVXZrA1paqyDWPD3Xldy_NOOV93Bkyy4Ijg');
-    this.globalData.userId = '1485787894313406465';
-    this.globalData.userMobile = '15205921176';
+    tt.setStorageSync('dyUserId', '1542402625372450817');
+    tt.setStorageSync('userMobile', '18359115221');
+    tt.setStorageSync('dyToken', 'eyJjcmVhdG9yIjoiVElLVE9LLVNIT1AiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0aWt0b2stc2hvcCIsInJmdCI6MTY2MTU4ODk3OCwidWlkIjoiMTU0MjQwMjYyNTM3MjQ1MDgxNyIsIm5iZiI6MTY1OTA4MzM3OCwiY3YiOjEwMCwiaXNzIjoiY2tqciIsInV0eSI6MSwiZXhwIjoxNjYxNjc1Mzc4LCJpYXQiOjE2NTkwODMzNzgsImFpZCI6IjE1NDI0MDI2MjUzNzI0NTA4MTciLCJjaWQiOiIxMTczOTQ1MDc3MDg4ODg4ODg4In0.RpKqgO3AGNnDh-Z3qcHPejEKU7EPyFuAE8GjDTpL-Oo');
+    this.globalData.userId = '1542402625372450817';
+    this.globalData.userMobile = '18359115221';
     utilJs.getShareTip();
     this.globalData.isIosApp = utilJs.isIos();
     let data = {
@@ -87,10 +87,10 @@ App({
       'COLUMN': 9,
     },
     PROD_ROUTER_MAP: {
-      9: '/pages/home/column/detail/index',
-      110: '/pages/home/course/video/index',
-      111: '/pages/home/course/audio/index',
-      112: '/pages/home/course/article/index'
+      9: '/pages/home/details/column/index',
+      110: '/pages/home/details/index',
+      111: '/pages/home/details/index',
+      112: '/pages/home/details/index'
     },
     shareTemplateId: '',
     companyName: '创客匠人',

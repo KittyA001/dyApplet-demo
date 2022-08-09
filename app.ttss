@@ -1273,6 +1273,9 @@ button {
 .c-p-l186 {
   left: 186rpx;
 }
+.c-pl-999 {
+  left: -999rpx;
+}
 .c-pl-n99999 {
   left: -99999rpx;
 }
@@ -2417,6 +2420,9 @@ button {
 .c-pt480 {
   padding-top: 480rpx;
 }
+.c-pt500 {
+  padding-top: 500rpx;
+}
 
 .c-pr4 {
   padding-right: 4rpx;
@@ -2982,7 +2988,9 @@ image {
 }
 
 /*半透明*/
-
+.c-translucent-balck50 {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 .c-translucent-balck60 {
   background-color: rgba(0, 0, 0, 0.6);
 }

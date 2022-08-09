@@ -1,0 +1,283 @@
+<view tt:if="{{introduce.length}}" class="c-pt200 c-pb120 c-p">
+    <view tt:if="{{fixedNav}}" class="c-bg-white c-pt200 c-w100 c-pb20 c-ph30 c-pf c-p-t0 c-p-l0 c-pz1000">
+        <tabList list="{{tabList}}" bindchange="changeActive" tabType="{{active}}" layoutItem="margin-right: 40rpx" fontStyle="c-fc-2979FF c-fw600 c-fs30" linebg="#2979FF" isShowLine="{{true}}" justifyType="space-between"></tabList>
+    </view>
+    <!-- 封面 -->
+    <image tt:else class="c-w100 c-hh500" src="{{info.cover}}"></image>
+
+    <!-- 秒杀 -->
+    <view tt:if="{{info.flashSalesForProd}}" class="c-bg-falshSales c-pt44 c-pb20 c-ph30 c-flex-row c-justify-sb">
+        <view class="c-h c-pb10">
+            <view class="c-fc-white c-fs30 c-flex-row">
+                <view class="c-flex-column c-justify-end">
+                    <view>￥</view>
+                </view>
+                <view class="c-fs54 c-fw600 c-lh54">{{info.flashSalesForProd.flashSalesPrice}}</view>
+                <view class="c-flex-column c-justify-end c-p c-ww100 c-fc-e6e4e4 c-ml10">
+                    <view class="c-text-decoration-through">￥{{info.flashSalesForProd.price}}</view>
+                    <view class="c-pa c-p-t-22 c-p-l0 c-bg-white c-ph6 c-fs22 c-fw600 c-fc-ff0d49 c-brbr24 c-brtr24 c-brtl24">{{info.flashSalesForProd.discount}}折</view>
+                </view>
+            </view>
+        </view>
+        <view class="c-flex-column c-justify-end c-pt10">
+            <progressBar width="210" height="30" bgcolor="#880502" active="{{true}}" style="color: #870507;font-weight:600;font-size:20rpx;line-height:30rpx" text="{{info.flashSalesForProd.lastCount == -1 ? '已售' + info.buyNum : '仅剩'+info.flashSalesForProd.lastCount+'份'}}" percent="80" activeColor="#fdda59">
+                <view slot="icon" class="c-ww68 c-hh40">
+                    <image class="c-w100 c-h" src="/assets/img/flash_sales_go.png"></image>
+                </view>
+            </progressBar>
+        </view>
+    </view>
+    <view class="c-bg-lwhite c-pv10 c-ph30 c-flex-row c-aligni-center">
+        <image class="c-ww30 c-hh28 c-mt2" src="/assets/img/security.png"></image>
+        <view class="c-ml10 c-fs24 c-fw600 c-fc-xblack">官方保障</view>
+        <view class="c-ml20 c-fc-gray c-fs24">高清视频 消费者保障服务</view>
+    </view>
+    <!-- 有效期 -->
+    <view tt:if="{{info.name}}" class="c-pv20 c-ph30">
+        <view tt:if="{{!info.flashSalesForProd}}" class="c-flex-row">
+            <view tt:if="{{info.price}}" class="c-fs30 c-fc-ff0d49 c-pb20">￥<text class="c-fs54">{{info.priceFirst}}</text>{{info.priceEnd}}</view>
+            <view tt:else class="c-fs30 c-fc-ff0d49 c-pb20">免费</view>
+            <view tt:if="{{info.couponDefaultProdVo}}" class="c-flex-column c-flex-center">
+                <view class="c-fs20 c-bg-FF4A35 c-fc-white c-pv6 c-ph16 c-br25">券后￥{{postCouponPrice}}</view>
+            </view>
+        </view>
+        <view class="c-fs30 c-fw600 c-fc-xblack c-pb20">{{info.name}}</view>
+        <!-- 关联商品 -->
+        <view tt:if="{{info.relatedSaleProdCount}}" class="c-fc-sred c-pt10 c-pb20 c-fs24 c-flex-row c-justify-start c-aligni-center">
+            <image class="c-ww20 c-hh20 c-mr10" src="/assets/img/present.png"></image>
+            <text class="c-mr4">购买该课程，可获赠{{info.relatedSaleProdCount}}个商品</text>
+            <text class="iconfont icon-gengduo c-fs18"></text>
+        </view>
+        <view class="c-bg-lwhite c-flex-row c-justify-sa c-pv32 c-br10">
+            <view class="c-fs24 c-flex-column c-flex-center">
+                <view tt:if="{{info.expiredTimeMonth}}" class="c-fc-2979FF">{{info.expiredTimeMonth}}个月</view>
+                <view tt:else class="c-fc-2979FF">永久有效</view>
+                <view class="c-fc-gray">有效期</view>
+            </view>
+            <view class="c-fs24 c-flex-column c-flex-center">
+                <view class="c-fc-xblack">{{info.catalogueSize}}节</view>
+                <view class="c-fc-gray">课时</view>
+            </view>
+            <view class="c-fs24 c-flex-column c-flex-center">
+                <view class="c-fc-xblack">{{info.buyNum}}人</view>
+                <view class="c-fc-gray">已购买</view>
+            </view>
+            <view class="c-fs24 c-flex-column c-flex-center">
+                <view class="c-fc-xblack">{{PROD_TYPE[info.prodType]}}</view>
+                <view class="c-fc-gray">课程类型</view>
+            </view>
+        </view>
+        <!-- 优惠券 -->
+        <view tt:if="{{info.couponDefaultProdVo.couponProdVo}}" class="c-flex-row c-mt40 c-bg-white">
+            <view class="c-p c-flex-1 c-flex-row c-pv10 c-bg-fff1f4 c-br20">
+                <view class="c-w72 c-ph24 c-pv24 c-fc-e73b5e c-flex-column c-justify-sb">
+                    <view class="c-fs30 c-fw600 c-pt16">{{info.couponDefaultProdVo.couponProdVo.name}}</view>
+                    <view class="c-fs20 c-pb10 c-pt20">{{info.couponDefaultProdVo.couponProdVo.startTime}}-{{info.couponDefaultProdVo.couponProdVo.endTime}}</view>
+                </view>
+                <view class="c-pv20 c-w28 c-flex-column c-flex-center c-bd-td1-f4">
+                    <view class="c-fc-e73b5e c-fs40"><text class="c-fs28">￥</text>{{info.couponDefaultProdVo.couponProdVo.amount}}</view>
+                    <view class="c-bg-FF4A35 c-fc-white c-fs20 c-pv10 c-ph50 c-br25">领取</view>
+                </view>
+                <view class="c-pv6 c-ph30 c-brtl20 c-brbr20 c-fc-white c-fs20 c-linear-sred c-pa c-p-t0 c-p-l0">专属优惠券</view>
+            </view>
+            <view tt:if="{{info.couponDefaultProdVo.totalCouponCount > 1}}" class="c-pl20">
+                <view class="c-ww56 c-bg-fff1f4 c-fc-e73b5e c-fs24 c-ph16 c-pv20 c-br20">查看更多</view>
+            </view>
+        </view>
+    </view>
+    <!-- 用户评价 -->
+    <view tt:if="{{comment.length}}" id="evaluation" class="c-bg-f5f6f8 c-pt16">
+        <view class="c-bg-white c-ph30 c-pv30">
+            <cell>
+                <view slot="title" class="c-fs32">用户评价（{{comment.length}}）</view>
+                <view slot="right" class="c-fc-sblack c-fs24">查看全部 <text class="iconfont icon-gengduo c-fs20"></text></view>
+            </cell>
+            <view class="c-fs28 c-pv30 {{index < comment.length - 1 ? 'c-bd-b2-f5': ''}} c-flex-row" tt:for="{{comment}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                <view class="c-ww60 c-hh60">
+                    <image class="c-w100 c-h c-brp50" src="{{item.headimgurl}}"></image>
+                </view>
+                <view class="c-pl30 c-flex-1 c-flex-column c-justify-sb">
+                    <view class="c-fc-sblack c-pb20">{{item.nickname}}</view>
+                    <view class="c-pb20 c-flex-row">
+                        <image class="c-ww20 c-hh20 c-mr4" src="/assets/img/icon_star_active.png" tt:for="{{item.score}}" tt:for-item="item" tt:key="item"></image>
+                    </view>
+                    <view>{{item.content}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 课程目录 -->
+    <view tt:if="{{catalogueList.length}}" id="catalogue" class="c-bg-f5f6f8 c-pt16">
+        <view class="c-bg-white c-ph30 c-pt30">
+            <cell>
+                <view slot="title" class="c-fs32">课程目录（{{info.catalogueSize}}）</view>
+                <view slot="right" class="c-fc-sblack c-fs24">&nbsp;顺序</view>
+                <view slot="icon" class="iconfont icon-shunxubofang c-fs26 c-fc-sblack c-mt4"></view>
+            </cell>
+            <view tt:if="{{PROD_TYPE[prodType]==='专栏'}}">
+                <view class="c-pv30 c-flex-row {{index < catalogueList.length - 1 ? 'c-bd-b2-f5': ''}}" tt:for="{{catalogueList}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                    <view class="c-ww220 c-hh130 c-p">
+                        <image class="c-w100 c-h c-br10" src="{{item.cover}}"></image>
+                        <view class="c-pt4 c-pb6 c-ph6 c-textAlign-c c-br6 c-pa c-fs18 c-fc-white c-p-r6 c-p-b6 c-translucent-balck50">{{PROD_TYPE[item.prodType]}}</view>
+                        <view tt:if="{{item.isFreeView}}" class="c-pa c-p-t4 c-p-l4 c-fs20 c-linear-blue c-pv4 c-ph6 c-brtl10 c-brbr10 c-fc-white c-mr10">可试看</view>
+                    </view>
+                    <view class="c-flex-1 c-pl20 c-flex-column c-justify-sb">
+                        <view class="c-fs28 c-text-ellipsis2">{{item.name}}</view>
+                        <view class="c-pb12 c-flex-row c-justify-sb">
+                            <view class="c-fc-gray c-fs20">已学{{item.progress}}%</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view tt:else class="c-pv30 c-fs28 c-flex-row c-justify-sb {{(info.hasPurview || item.isFreeView) && playIndex===index? 'c-fc-2979FF' : ''}} {{index < catalogueList.length - 1 ? 'c-bd-b2-f5': ''}}" bindtap="changePlay" data-index="{{index}}" tt:for="{{catalogueList}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                <view tt:if="{{PROD_TYPE[prodType]==='视频'}}" class="iconfont icon-shipin c-mr20 c-mt8"></view>
+                <view tt:if="{{PROD_TYPE[prodType]==='音频'}}" class="iconfont icon-yinpin2 c-mr20 c-mt8"></view>
+                <view class="c-flex-1">
+                    <view class="c-mb20 c-fs30 c-flex-row c-justify-sb">
+                        <view><text tt:if="{{item.isFreeView}}" class="c-fs20 c-linear-blue c-pv4 c-ph6 c-br6 c-fc-white c-mr10">可试看</text>{{item.name}}</view>
+                        <view tt:if="{{!info.hasPurview && !item.resLink}}" class="iconfont icon-suo c-fc-e6e4e4 c-fs24"></view>
+                    </view>
+                    <view class="c-flex-row c-justify-sb">
+                        <view class="c-fs24  {{(info.hasPurview || item.isFreeView) && playIndex===index? 'c-fc-2979FF' : 'c-fc-gray'}}">
+                            <text class="iconfont icon-shichang c-fs24 c-mr6"></text>
+                            <text>{{item.resDuration}}</text>
+                            <text class="c-ml30">已学{{item.progress}}%</text>
+                        </view>
+                        <!-- <view tt:if="{{item.isFreeView}}" class="c-fs22 c-fw600 c-fc-2979FF">点击试听</view> -->
+                    </view>
+                </view>
+            </view>
+            <!-- <toast isShowToast="{{isShow}}" content="暂无权限收听"></toast> -->
+            <!-- <view tt:if="{{isShow}}" class="c-w100 c-h100vh c-pa c-p-t0 c-pz100">
+                <view class="c-fc-white c-fs24 c-translucent-balck80 c-pa c-p-tp50 c-p-lp50 c-translate-xy-50 c-br20 c-flex-column c-justify-sb c-aligni-center c-pv40 c-ph40">
+                    暂无权限收听
+                </view>
+              </view> -->
+        </view>
+    </view>
+    <!-- 更多课程 -->
+    <view tt:if="{{info.talentInfo.talentName}}" class="c-bg-f5f6f8 c-pt16">
+        <view class="c-bg-white c-pv30 c-ph30">
+            <view class="c-flex-row c-justify-sb">
+                <view class="c-flex-1">
+                    <card>
+                        <view slot="image" class=" c-ww100 c-hh100">
+                            <image class="c-w100 c-h c-brp50" src="{{info.talentInfo.headimgurl}}"></image>
+                        </view>
+                        <view slot="content" class="c-fw600">{{info.talentInfo.talentName}}</view>
+                        <view slot="label" class="c-fs20">{{info.talentInfo.prodCount}}个课程正在热卖中</view>
+                    </card>
+                </view>
+                <view class="c-ww190 c-ml20 c-flex-column c-flex-center">
+                    <view class="c-ph34 c-pv10 c-bg-2979FF c-fs24 c-fc-white c-br30">更多课程 <text class="iconfont icon-gengduo c-fs18"></text></view>
+                </view>
+            </view>
+            <view class="c-bg-lwhite c-fc-96a6bf c-br10 c-pv20 c-ph24 c-fs24 c-mt30">
+                <view class="c-w100 c-text-ellipsis2">{{info.talentInfo.talentDesc}}</view>
+            </view>
+        </view>
+    </view>
+    <!-- 课程详情 -->
+    <view tt:if="{{introduce.length}}" id="details" class="c-bg-f5f6f8 c-pt16">
+        <view class="c-bg-white c-pv30 c-ph30">
+            <cell>
+                <view slot="title" class="c-fs32">课程介绍</view>
+            </cell>
+            <view class="c-w100 c-pt20" tt:for="{{introduce}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                <rich-text class="c-w100" nodes="{{item.content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <!-- 相关推荐 -->
+    <view tt:if="{{recommendList.length}}" id="recommend" class="c-bg-f5f6f8 c-pt16">
+        <view class="c-bg-white c-pv30 c-ph30">
+            <cell>
+                <view slot="title" class="c-fs32">相关推荐</view>
+            </cell>
+            <view class="c-pt30 c-w100" tt:for="{{info.prodInfoRelatesList}}" tt:for-item="item" tt:for-index="index" tt:key="index">
+                <prodCard itemInfo="{{item}}"></prodCard>
+            </view>
+        </view>
+    </view>
+    <!-- 购买须知 -->
+    <view class="c-bg-f5f6f8 c-pt16">
+        <view class="c-bg-white c-ph30">
+            <view class="c-pb10 c-flex-row c-justify-center">
+                <view class="c-fc-white c-fs24 c-pv10 c-ph60 c-bg-buyKnowBg">购买须知</view>
+            </view>
+            <view class="c-flex-row c-pt30">
+                <image class="c-ww150 c-hh56 c-pr24" src="/assets/img/buy_know_que.png"></image>
+                <view class="c-fs24 c-bd-b2-f5">
+                    <view class="c-fs28 c-fw600 c-fc-xblack c-pb20">购买课程后如何观看？</view>
+                    <view class="c-pb24 c-lh40">
+                        <text class="c-fs18 c-fc-2979FF c-fw600 c-translucent-blue c-ph10 c-pv6 c-mr10">方法一</text>打开抖音APP搜索创客匠人小程序进入后，点击底部“学习”按钮，即可找到你所购买的课程。
+                    </view>
+                    <view class="c-pb24 c-lh40">
+                        <text class="c-fs18 c-fc-2979FF c-fw600 c-translucent-blue c-ph10 c-pv6 c-mr10">方法二</text>打开抖音APP点击“我”————“右上角更多”————“我的订单”进入订单页找到对应的课程，点击之后即可观看学习。
+                    </view>
+                </view>
+            </view>
+            <view class="c-flex-row c-pt30">
+                <view class="c-ww80 c-hh56 c-pr24">
+                    <image class="c-w100 c-h" src="/assets/img/buy_know_que.png"></image>
+                </view>
+                <view class="c-fs24 c-bd-b2-f5 c-flex-1">
+                    <view class="c-fs28 c-fw600 c-fc-xblack c-pb20">购买课程后如何观看？</view>
+                    <view class="c-pb24 c-lh40">
+                        由于课程为虚拟商品，购买后无特殊情况不支持退款，请慎重购买，若课程存在违规、描述不符、欺骗用户等行为，您有权联系老师进行协商退款。                    </view>
+                </view>
+            </view>
+            <view class="c-flex-row c-pt30">
+                <image class="c-ww80 c-hh56 c-pr24" src="/assets/img/buy_know_que.png"></image>
+                <view class="c-fs24 c-bd-b2-f5">
+                    <view class="c-fs28 c-fw600 c-fc-xblack c-pb20">售后问题如何咨询？</view>
+                    <view class="c-pb24 c-lh40">
+                        <text class="c-fs18 c-fc-2979FF c-fw600 c-translucent-blue c-ph10 c-pv6 c-mr10">方法一</text>进入到课程详情页面，点击底部菜单栏的“咨询”。
+                    </view>
+                    <view class="c-pb24 c-lh40">
+                        <text class="c-fs18 c-fc-2979FF c-fw600 c-translucent-blue c-ph10 c-pv6 c-mr10">方法二</text>在【我的】页面点击“咨询客服”
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 底部 -->
+    <view class="c-pv60 c-mb20 c-flex-row c-flex-center">
+        <view class="c-hh1 c-ww200 c-bg-sgray"></view>
+        <view class="c-fs20 c-fc-xsblack c-ph20 c-flex-row c-flex-center"><text class="iconfont icon-logo c-mr10"></text><text>创客匠人提供技术支持</text></view>
+        <view class="c-hh1 c-ww200 c-bg-sgray"></view>
+    </view>
+    <image class="c-ww90 c-hh90 c-pf c-p-b184 c-p-r24 c-pz1000" src="/assets/img/open_video.png"></image>
+    <view tt:if="{{endDate}}" class="c-w100 c-pf c-p-b114 c-p-l0 c-pz1000 c-hh68 c-animation-position c-pv8 c-bg-fff1ce c-fs24 c-fw600 c-fc-white c-flex-row c-flex-center">
+        <view class="c-fc-f94837 c-mr20 c-fs26">秒杀仅剩</view>
+        <view class="c-bg-FF4A35 c-pv4 c-ph10 c-mr6" tt:for="{{day}}" tt:for-item="item" tt:for-index="index" tt:key="index">{{item}}</view>
+        <view class="c-fc-f94837 c-mr6 c-fs26">天</view>
+        <view class="c-bg-FF4A35 c-pv4 c-ph10 c-mr6" tt:for="{{hour}}" tt:for-item="item" tt:for-index="index" tt:key="index">{{item}}</view>
+        <view class="c-fc-f94837 c-mr6">:</view>
+        <view class="c-bg-FF4A35 c-pv4 c-ph10 c-mr6" tt:for="{{minute}}" tt:for-item="item" tt:for-index="index" tt:key="index">{{item}}</view>
+        <view class="c-fc-f94837 c-pv10 c-mr6">:</view>
+        <view class="c-bg-FF4A35 c-pv4 c-ph10 c-mr6" tt:for="{{seconds}}" tt:for-item="item" tt:for-index="index" tt:key="index">{{item}}</view>
+    </view>
+    <view class="c-bg-white c-w100 c-pf c-p-b0 c-p-l0 c-pz1000">
+        <view class="c-ph30 c-pv20 c-bd-t1-e5 c-flex-row c-justify-sb c-aligni-center c-fs24">
+            <view class="c-fs24 c-flex-column justify-center">
+                <view class="c-mb8 iconfont icon-kefu1 c-textAlign-c"></view>
+                <view class="c-fs18">咨询</view>
+            </view>
+            <view class="c-fs24 c-flex-column c-flex-center">
+                <view class="c-mb8 iconfont icon-fenxiang c-textAlign-c"></view>
+                <view class="c-fs18">分享</view>
+            </view>
+            <view class="c-fs24 c-flex-column justify-center">
+                <view class="c-mb8 iconfont icon-shoucang c-textAlign-c"></view>
+                <view class="c-fs18">收藏</view>
+            </view>
+            <view tt:if="{{info.couponDefaultProdVo}}" class="c-flex-row c-flex-center c-ww406 c-fc-white c-fs28 c-pv18 c-linear-xred c-br50">
+                <view>领券购买&nbsp;&nbsp;|&nbsp;&nbsp;券后￥{{postCouponPrice}}</view>
+            </view>
+            <view tt:else class="c-fc-white c-fs28 c-pv18 c-ww406 c-flex-row c-flex-center {{info.flashSalesForProd?'c-linear-xred':'c-bg-2979FF'}} c-br50">
+                <view>购买￥{{info.flashSalesForProd? info.flashSalesForProd.flashSalesPrice : info.price}}</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -8,7 +8,16 @@
         </view>
         <cell>
             <view class="c-fc-gray c-fs28 c-fw400" slot="title">共{{total}}个内容</view>
-            <view bindtap="goAll" data-id="1" slot="right" class="c-fs28">全部类型 <text class="iconfont icon-gengduo c-fs24"></text></view>
+            <view slot="right">
+                <picker
+                value="{{index}}"
+                range="{{prodTypeList}}"
+                bindchange="bindPickerChange"
+                bindcancel="bindPickerCancel"
+                >
+                    <view class="c-fc-sblack c-fs28">{{type}}<text class="iconfont icon-gengduo c-fs24"></text></view>
+                </picker>
+            </view>
         </cell>
         <view class="c-pv40">
             <view bindtap="goDetails" data-id="{{item.id}}" data-type="{{item.prodType}}" class="c-mb30" tt:for="{{list}}" tt:for-item="item" tt:for-index="index" tt:key="index">

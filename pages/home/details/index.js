@@ -1,5 +1,5 @@
 
-let { ttRequestGet,ttRequestPost } = require('../../../utils/util')
+let util = require('../../../utils/util')
 const { PROD_TYPE } = require('../../../utils/constData')
 let { getPageHtml } = require('../../../utils/util')
 let innerAudioContext = tt.createInnerAudioContext() // 音频
@@ -273,7 +273,7 @@ Page({
   // 获取商品详情信息
   async getInfo() {
     try {
-      let info = await ttRequestGet(`dyprod/prodDetail/${this.data.prodId}`)
+      let info = await util.ttRequestGet(`dyprod/prodDetail/${this.data.prodId}`)
       let price = info.price.toFixed(2)
       let priceFirst = price.toString().split('.')[0]
       let priceEnd = '.' + price.toString().split('.')[1]
@@ -355,7 +355,7 @@ Page({
   async getCatalogue() {
     if (PROD_TYPE[this.data.prodType]==='视频' || PROD_TYPE[this.data.prodType]==='音频') {
       try {
-        let data = await ttRequestPost('dyprod/getProdDetailList',{
+        let data = await util.ttRequestPost('dyprod/getProdDetailList',{
           id: this.data.prodId,
           prodType: this.data.prodType
         })
@@ -394,7 +394,7 @@ Page({
       }
     }else {
       try {
-        let data = await ttRequestPost('dyprod/getSubProdList',{
+        let data = await util.ttRequestPost('dyprod/getSubProdList',{
           id: this.data.prodId,
           prodType: this.data.prodType
         })
@@ -408,7 +408,7 @@ Page({
   },
   // 获取课程介绍内容
   async getIntroduce() {
-    let data = await ttRequestGet(`dyprod/getDetailInfo/${this.data.prodId}`)
+    let data = await util.ttRequestGet(`dyprod/getDetailInfo/${this.data.prodId}`)
     let htmlList = []
     for(let i = 0; i < data.length; i++) {
       let obj = {}
@@ -492,7 +492,7 @@ Page({
   },
   // 获取评论列表
   async getComment() {
-    let data = await ttRequestGet('comment/page', {
+    let data = await util.ttRequestGet('comment/page', {
       pid: this.data.prodId,
       pageNo: this.data.pageNo,
       pageSize: this.data.pageSize
@@ -512,7 +512,7 @@ Page({
       subProdId: this.data.info.parentId ? this.data.prodId : '',
       subProdType: ''
     }
-    ttRequestPost('dymine/learningLogs',data)
+    util.ttRequestPost('dymine/learningLogs',data)
   },
   onPageScroll(e) {
     if (this.data.tabList.length) {
