@@ -8,7 +8,7 @@ Component({
   properties: {
     itemInfo: {
       type: Object,
-      default: ()=>({})
+      value: ()=>({})
     }
 
   },
@@ -17,6 +17,7 @@ Component({
   },
   observers: {
     "itemInfo"(itemInfo) {
+      // console.log('itemInfo',itemInfo)
       this.setData({
         "item": itemInfo
       })

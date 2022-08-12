@@ -1197,6 +1197,9 @@ button {
 .c-p-r30 {
   right: 30rpx;
 }
+.c-p-r112 {
+  right: 112rpx;
+}
 .c-p-r-172 {
   right: -172rpx;
 }
@@ -1266,9 +1269,17 @@ button {
 .c-p-l16 {
   left: 16rpx;
 }
-
+.c-p-l32 {
+  left: 32rpx;
+}
 .c-p-l38 {
   left: 38rpx;
+}
+.c-p-l50 {
+  left: 50rpx;
+}
+.c-p-l60 {
+  left: 60rpx;
 }
 .c-p-l186 {
   left: 186rpx;

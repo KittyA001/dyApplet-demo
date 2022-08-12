@@ -11,7 +11,7 @@
   "projectname": "抖音测试",
   "condition": {
     "miniprogram": {
-      "current": 1656987621339,
+      "current": -1,
       "list": [
         {
           "id": 1656923834964,
@@ -89,6 +89,15 @@
           "id": 1658289484272,
           "name": "talentDetails",
           "pathName": "pages/home/talentDetails/index",
+          "query": "",
+          "scene": "990001",
+          "launchFrom": "scan",
+          "location": "qr_code"
+        },
+        {
+          "id": 1660028363745,
+          "name": "search",
+          "pathName": "pages/home/search/index",
           "query": "",
           "scene": "990001",
           "launchFrom": "scan",

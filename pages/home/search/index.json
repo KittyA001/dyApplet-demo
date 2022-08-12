@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "search": "/components/search/index",
+        "prodCard": "/pages/home/components/prodCard/index",
+        "tabList": "/pages/home/components/tabList/index"
+    }
+}

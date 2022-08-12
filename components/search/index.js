@@ -1,7 +1,22 @@
-// d:\items\抖音测试\components\text\text.js
+import utils from '../../utils/util'
 Component({
   data: {
-    search: ''
+    search: '',
+    tabList: [
+      {
+        key: '1',
+        value: '全部',
+      }, {
+        key: '2',
+        value: '达人',
+      }, {
+        key: '3',
+        value: '内容',
+      }
+    ],
+    searchList: [],
+    curSelectTab: '1',
+    active: 0
   },
   properties: {
     value: {
@@ -23,6 +38,40 @@ Component({
        'value': currentValue
      })
     },
+    tapclear() {
+      this.setData({
+        'search': ''
+      })
+      console.log('pk')
+    },
+    tapsearch() {
+      this.setData({
+        "searchList": [],
+        "loading": true
+      })
+      var url = "dyhomepage/searchProd";
+      var data = {
+        pageNo: 1,
+        pageSize: 10,
+        content: this.data.search,
+        globalSearchType: '3'
+        // globalSearchType: this.data.curSelectTab
+      }
+      utils.ttRequestPost(url, data).then(res=>{
+        let arr = [...this.data.searchList,...res.records]
+        this.setData({
+          "searchList": arr
+        })
+        this.triggerEvent('grtSearchList',this.data.searchList)
+        console.log('searchList',this.data.searchList)
+      })
+    },
+    changeActive(e) {
+      console.log('changeActive',e.currentTarget)
+      this.setData({
+        "active": e.currentTarget.dataset.index
+      })
+    }
   },
   observers: {
     'value'(value) {

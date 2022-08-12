@@ -38,12 +38,19 @@ Component({
     }
   },
   methods: {
+    // change(e) {
+    //   console.log('e',e.currentTarget.dataset)
+    //   // this.triggerEvent('change',e.currentTarget.dataset.index)
+    //   // this.setData({
+    //   //   'tabType': e.currentTarget.dataset.index
+    //   // })
+    // }
     change(e) {
-      console.log('e',e.currentTarget.dataset)
-      this.triggerEvent('change',e.currentTarget.dataset.index)
-      // this.setData({
-      //   'tabType': e.currentTarget.dataset.index
-      // })
+      console.log('index',e.currentTarget.dataset.index)
+        this.triggerEvent('change',{index:e.currentTarget.dataset.index})
+        this.setData({
+          'tabType': e.currentTarget.dataset.index
+        })
     }
   }
 })

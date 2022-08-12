@@ -1,8 +1,14 @@
 <!-- 搜索 -->
-<view class="c-bg-white c-w100">
-  <input value="{{search}}" data-modal='search' bindinput='handleInputChange' class="c-br64 c-bg-F6F7F8 c-w100 c-bd0 c-hh64 c-textAlign-c c-fs28 c-p" type="text" />
-  <view id="search" tt:if="{{!search}}" class="c-flex-row c-fc-gray c-fs28 c-pa c-p-tp50 c-p-tl50 c-translate-xy-50">
-      <image class="c-mt8 c-mr20 c-ww28 c-hh28" src="../../assets/img/icon_search.png"/>
-      <view class="c-fc-xsblack c-fs28">请输入搜索内容</view>
-  </view>
+<view class="c-bg-white c-w100 c-mb30 c-flex-row c-p">
+    <input value="{{search}}" data-modal='search' bindinput='handleInputChange' class="c-ph30 c-br64 c-bg-F6F7F8 c-flex-1 c-bd0 c-hh64 c-fs28 c-p" type="text" />
+    <view id="search" tt:if="{{!search}}" class="c-flex-row c-fc-gray c-fs28 c-pa c-p-tp50 c-p-l32 c-translate-y-50">
+        <image class="c-mt8 c-mr20 c-ww28 c-hh28" src="../../assets/img/icon_search.png"/>
+        <view class="c-fc-xsblack c-fs28">请输入搜索内容</view>
+    </view>
+    <view tt:if="{{search}}" bindtap="tapclear" class="c-zindex10 c-ww32 c-hh32 c-brp50 c-bg-96A6BF c-flex-row c-flex-center c-pa c-p-tp50 c-p-r112 c-translate-y-50">
+      <text class="iconfont icon-shanchuxian c-fs24 c-fc-white"></text>
+    </view>
+    <view bindtap="tapsearch" class="c-fc-2979FF c-fs30 c-hh64 c-lh64 c-ml20">搜索</view>
 </view>
+<tabList list="{{tabList}}" bindchange="changeActive" tabType="{{active}}" layoutItem="margin-right: 40rpx" fontStyle="c-fc-2979FF c-fw600 c-fs32" linebg="#2979FF" isShowLine="{{true}}" justifyType="space-between"></tabList>
+

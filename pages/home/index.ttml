@@ -3,7 +3,7 @@
     <view class="c-pb100 c-pt200 c-ph30">
       <!-- 搜索 -->
       <view class="c-p c-mb30 c-pv16 ">
-        <search value="{{search}}"></search>
+        <search-buttom value="{{search}}"></search-buttom>
       </view>
       <!-- 轮播图 -->
       <rotationChart tt:if="{{images.length}}" images="{{images}}"></rotationChart>

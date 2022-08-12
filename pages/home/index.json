@@ -12,6 +12,7 @@
         "hotCourse": "/pages/home/components/hotCourse/index",
         "rankingList": "/pages/home/components/rankingList/index",
         "search": "/components/search/index",
-        "technical-support": "/components/technicalSupport/index"
+        "technical-support": "/components/technicalSupport/index",
+        "search-buttom": "/components/search-buttom/index"
     }
 }

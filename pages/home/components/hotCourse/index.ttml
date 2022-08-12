@@ -20,12 +20,12 @@
                         <text>{{item.talentName}}</text>
                     </view>
                     <view class="c-ph16 c-fc-FF4A35" slot="price">
-                        <text class="c-fw600 c-fs18" tt:if="{{item.flashSalesForProd}}">秒杀价</text>
-                        <text class="c-fs24 c-fw600">￥</text>
-                        <text tt:if="{{item.flashSalesForProd}}" class="c-fs24 c-fw600 c-fs30">{{item.flashSalesForProd.flashSalesPrice}}</text>
-                        <text tt:else class="c-fs24 c-fw600">{{item.price}}</text>
-                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text>
-                        <text tt:if="{{item.couponProdListVo && item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">有券</text>
+                        <text class="c-fw600 c-fs20" tt:if="{{item.flashSalesForProd}}">秒杀价</text>
+                        <text class="c-fs28 c-fw600">￥</text>
+                        <text tt:if="{{item.flashSalesForProd}}" class="c-fw600 c-fs30">{{item.flashSalesForProd.flashSalesPrice}}</text>
+                        <text tt:else class="c-fs28 c-fw600">{{item.price}}</text>
+                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs22 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text>
+                        <text tt:if="{{item.couponProdListVo && item.flashSalesForProd}}" class="c-inlineblock c-fs22 c-ph6 c-pv4 c-translucent-red">有券</text>
                     </view>
                 </portraitCard>
             </view>
@@ -45,12 +45,12 @@
                         <text>{{item.talentName}}</text>
                     </view>
                     <view class="c-ph16 c-fc-FF4A35" slot="price">
-                        <text class="c-fw600 c-fs18" tt:if="{{item.isSeckill}}">秒杀价</text>
-                        <text class="c-fs24 c-fw600">￥</text>
-                        <text tt:if="{{item.flashSalesForProd}}" class="c-fs24 c-fw600 c-fs30">{{item.flashSalesForProd.flashSalesPrice}}</text>
-                        <text tt:else class="c-fs24 c-fw600">{{item.price}}</text>
-                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text>
-                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && item.flashSalesForProd}}" class="c-inlineblock c-fs18 c-ph6 c-pv4 c-translucent-red">有券</text>
+                        <text class="c-fw600 c-fs20" tt:if="{{item.isSeckill}}">秒杀价</text>
+                        <text class="c-fs28 c-fw600">￥</text>
+                        <text tt:if="{{item.flashSalesForProd}}" class="c-fw600 c-fs30">{{item.flashSalesForProd.flashSalesPrice}}</text>
+                        <text tt:else class="c-fs28 c-fw600">{{item.price}}</text>
+                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && !item.flashSalesForProd}}" class="c-inlineblock c-fs22 c-ph6 c-pv4 c-translucent-red">券可减￥{{item.couponProdListVo.maxFavorableMoney}}</text>
+                        <text tt:if="{{item.couponProdListVo.maxFavorableMoney && item.flashSalesForProd}}" class="c-inlineblock c-fs22 c-ph6 c-pv4 c-translucent-red">有券</text>
                     </view>
                 </portraitCard>
           </view>
