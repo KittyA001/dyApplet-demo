@@ -488,6 +488,7 @@ Page({
            }).exec()
         }
       }
+      console.log('tabList',this.data.tabList)
     })
   },
   // 获取评论列表
