@@ -4,7 +4,8 @@
     <view class="c-ph30">
                 <!-- 搜索 -->
         <view class="c-p c-mb20 c-pv16 ">
-            <search value="{{search}}"></search>
+            <!-- <search value="{{search}}"></search> -->
+            <search-buttom value="{{search}}"></search-buttom>
         </view>
         <cell>
             <view class="c-fc-gray c-fs28 c-fw400" slot="title">共{{total}}个内容</view>

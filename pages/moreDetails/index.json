@@ -2,7 +2,8 @@
     "usingComponents": {
         "search": "/components/search/index",
         "cell": "/components/cell/index",
-        "prodCard": "/pages/home/components/prodCard/index"
+        "prodCard": "/pages/home/components/prodCard/index",
+        "search-buttom": "/components/search-buttom/index"
     },
     "enablePullDownRefresh": true,
     "onReachBottomDistance": 0

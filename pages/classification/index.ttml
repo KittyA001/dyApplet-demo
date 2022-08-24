@@ -1,7 +1,8 @@
 <view class="c-flex-column c-h100vh c-ph30 c-pt200 c-pb20">
     <!-- 搜索 -->
     <view class="c-p c-w100 c-mb20 c-pv16 c-bd-b1-e5">
-        <search value="{{search}}"></search>
+        <!-- <search value="{{search}}"></search> -->
+        <search-buttom value="{{search}}"></search-buttom>
     </view>
     <view tt:if="{{classifyList.length}}" class="c-flex-1 c-flex-row c-pb20 c-bg-ssgray c-contexty-scroll c-contexty-hidden">
         <!-- 左 -->
